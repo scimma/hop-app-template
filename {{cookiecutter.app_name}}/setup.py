@@ -1,14 +1,19 @@
 import os
-from setuptools import setup
+from setuptools import find_packages, setup
 
 # read in README
 this_dir = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(this_dir, 'README.md'), 'rb') as f:
     long_description = f.read().decode().strip()
 
+# read in version
+version = {}
+with open("{{ cookiecutter.app_name }}/_version.py") as fp:
+    exec(fp.read(), version)
+
 # requirements
 install_requires = [
-    "hop-client >= 0.0.5",
+    "hop-client >= 0.2",
 ]
 extras_require = {
     'dev': [
@@ -26,7 +31,7 @@ extras_require = {
 }
 
 setup(
-    name = 'hop-{{ cookiecutter.app_name }}-app',
+    name = '{{ cookiecutter.app_name }}',
     description = '{{ cookiecutter.app_description }}',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
@@ -35,11 +40,12 @@ setup(
     author_email = '{{ cookiecutter.author_email }}',
     license = 'BSD 3-Clause',
 
-    packages = ['hop.apps.{{ cookiecutter.app_name }}'],
+    version = version['version'],
+    packages = find_packages(),
 
     entry_points = {
         'console_scripts': [
-            'hop-{{ cookiecutter.app_name }} = hop.apps.{{ cookiecutter.app_name }}.__main__:main',
+            '{{ cookiecutter.app_name }} = {{ cookiecutter.app_name }}.__main__:main',
         ],
     },
 

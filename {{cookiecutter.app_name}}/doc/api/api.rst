@@ -1,6 +1,6 @@
 .. _api:
 
-hop-{{ cookiecutter.app_name }}-app API
+{{ cookiecutter.app_name }} API
 ##########################################
 
 .. toctree::

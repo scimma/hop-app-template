@@ -19,7 +19,7 @@ REPO_URL = {{ cookiecutter.git_url }}
 
 .PHONY: test
 test :
-	$(PYTHON) -m pytest -v --cov=hop.apps.{{ cookiecutter.app_name }}
+	$(PYTHON) -m pytest -v --cov={{ cookiecutter.app_name }}
 
 .PHONY: lint
 lint :

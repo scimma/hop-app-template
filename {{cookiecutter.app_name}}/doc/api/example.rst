@@ -3,5 +3,5 @@
 {{ cookiecutter.app_name }}.example
 ####################################
 
-.. automodule:: hop.apps.{{ cookiecutter.app_name }}.example
+.. automodule:: {{ cookiecutter.app_name }}.example
     :members:

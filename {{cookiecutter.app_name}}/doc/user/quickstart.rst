@@ -7,7 +7,7 @@ Quickstart
 
 .. code:: python
 
-    from hop.apps import {{ cookiecutter.app_name }}
+    import {{ cookiecutter.app_name }}
 
 
 This will do something.

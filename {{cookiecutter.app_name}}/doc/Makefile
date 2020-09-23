@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = hop-{{ cookiecutter.app_name }}-app
+SPHINXPROJ    = {{ cookiecutter.app_name }}
 SOURCEDIR     = .
 BUILDDIR      = _build
 
